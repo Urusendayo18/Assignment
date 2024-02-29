@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  padding-bottom: 100px;
+  background-color: rgb(212, 172, 112);
+}
+
+h1 {
+  text-align: center;
+  font-size: 20px;
+  width: 500px;
+ 
+  padding-left: 100px;
+}
+h2 {
+  text-align: center;
+  font-size: 10px;
+  width: 500px;
+  padding: 9px;
+  padding-left: 100px;
+}
+h3 {
+  text-align: center;
+  font-size: 15px;
+  width: 500px;
+  padding: 10px;
+  padding-left: 100px;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  padding-left: 750px;
+  padding-top: 100px;
+}
+
+.time-box {
+  margin-top: 50px;
+  background-color: #dadce6a2;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+.text{
+  color: rgb(143, 80, 28);
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding-top: 0px;
+  margin: 0px;
+}
+img{
+  border-radius: 50px;
+  height: 400px;
+  text-align: center;
+  padding-left: 30px;
+  margin-top: 30px;
+}
+    </style>
+</head>
+<body>
+    <div>
+    <div class="img"><img src="https://static.standard.co.uk/2023/09/19/18/Apple%20iPhone%20home%20screen.jpeg?crop=8:5,smart&quality=75&auto=webp&width=1024" alt="Italian Trulli">
+        <div class="text">
+       <h1> OLD IPHONE GIVEAWAY</h1>
+       <h2><strong>Giveaway Ends On Saturday, 9 March 2024 At 11:30am</strong></h2>
+        <h3 >Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Quam, ab et labore assumenda rem delectus perferendis, aut
+             illo quis soluta expedita dolorem! Voluptas expedita eaque 
+             molestiae quis, repellendus aliquid dolorem quaerat. Commodi
+              eligendi aperiam omnis explicabo dolorum sunt veritatis,
+               culpa unde ex. Quia cum officiis voluptatum eligendi vero
+                nihil corporis!
+        </h3>
+    </div></div>
+    
+    
+    
+    <div class="timer-container">
+        <div class="time-box" id="days">0 days</div>
+        <div class="time-box" id="hours">0 hours</div>
+        <div class="time-box" id="minutes">0 minutes</div>
+        <div class="time-box" id="seconds">0 seconds</div>
+      </div>
+
+    </div>
+    <script>
+        function startTimer(duration) {
+  var timer = duration * 24 * 60 * 60; // Convert duration to seconds
+
+  var interval = setInterval(function() {
+    var days = Math.floor(timer / (24 * 60 * 60)); // Calculate remaining days
+    var hours = Math.floor((timer % (24 * 60 * 60)) / (60 * 60)); // Calculate remaining hours
+    var minutes = Math.floor((timer % (60 * 60)) / 60); // Calculate remaining minutes
+    var seconds = Math.floor(timer % 60); // Calculate remaining seconds
+
+    document.getElementById("days").textContent = days + " days";
+    document.getElementById("hours").textContent = hours + " hours";
+    document.getElementById("minutes").textContent = minutes + " minutes";
+    document.getElementById("seconds").textContent = seconds + " seconds";
+
+    if (--timer < 0) {
+      clearInterval(interval);
+      document.getElementById("days").textContent = "Timer completed!";
+    }
+  }, 1000); // Update the timer every second
+}
+
+// Start the timer for one month (30 days)
+startTimer(30);
+    </script>
+    </body>
+    </html>
+</body>
+</html>
